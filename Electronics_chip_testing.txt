@@ -1,0 +1,133 @@
+* Check that the power supply is turned off.
+
+* Take the chip from the untested chip box and put it in the socket,
+  but do not close it.
+
+* Identify the chip ID (number visible on top of the chip ) 
+
+* Fill the chip ID in labeview & e-traveler.
+
+* Re-check the chip ID from what labeview show on screen and what you
+  see in the socket.
+
+* Close the socket.
+
+* Start the automated test of chip n. This will run for 10-15 minutes 
+  (As this test runs the operator may have time to finalize the
+  archiving and indexing of the chip n-1 test results.)
+
+* test results will be in the form of files : 
+  * raw data file & results file : all the data associated to a given
+    chip are written in an unique directory with a name based on the
+    chip ID .
+
+* Key numbers associated to each chip could be archived in a LSST db :
+  there is a few 100 key numbers for each chips ( 8x8 xtalk matrix ,
+  noise and gain in # configuration for each of the 8 channels , a few
+  linearity curves) : this is an issue the characteristic of each chip
+  is not 1 or 10 numbers … its much more . So no way to copy this by
+  hand , should be filled automatically.
+
+So the question is what should we do from e-traveler point of view of
+the produced files ? To index them will be good …but indeed to read
+automatically the « results files « and fill a DB could be nice .
+     
+* data transfer to archive (we have a directory tree for this at
+  ccin2p3 ) : how this is triggered may evolve . It is not excluded
+  that we run extra process under linux there ( all the results quoted
+  above are produced from window under labview ) , to further analyse
+  the file … but I think that Claire try to get right now all the key
+  results out of a on the fly labview analysis .  At this stage we may
+  forget the linux processing , as this may evolve between now and the
+  production …
+  
+* The idea is that as soon the test is over, if labeview is not
+  flashing red and say that the chip can be withdrawn , we can
+  withdraw the chip from the socket , put it in the " tested box « and
+  move to the test of the chip n+1 … and as I said , as the test of
+  the chip n+1 runs , the operator could finalize the writing
+  associated to the chip n / look in detail the results its
+  characterization .  We will probably not declare at this stage a
+  chip okay : we may review all the chips results , and then identify
+  / validate the good one . But at least the operator could validate
+  that the characterization of the chip n run correctly .
+
+
+
+
+
+
+
+
+
+
+
+Subject: Re: homework from last week
+From: Pierre Antilogus <p.antilogus@in2p3.fr>
+In-Reply-To: <CF17AE58.5DC27%richard@slac.stanford.edu>
+Date: Wed, 5 Feb 2014 20:59:31 +0100
+Cc: "Chiang, James" <jchiang@slac.stanford.edu>,
+        Claire Juramy-Gilles <juramy@lpnhe.in2p3.fr>
+Message-Id: <6E3E8363-FF61-4D56-B25B-A54BAB39F0C4@in2p3.fr>
+References: <CF17AE58.5DC27%richard@slac.stanford.edu>
+To: "Dubois, Richard" <richard@slac.stanford.edu>
+
+Hi Richard, 
+
+Le 5 févr. 2014 à 18:01, Dubois, Richard <richard@slac.stanford.edu> a écrit :
+
+> Hi Pierre,
+>
+> Do I remember correctly that you were going to talk to Claire et al this
+> week about defining the processes for the electronics testing and maybe
+> trying to set up an eTraveler test? Also encouraging Claire to resume
+> using the eLog!
+>
+
+Yes, we did talk together  . 
+Still what we could do with the system is quite unclear to us right now , in particular with respect of 
+the result of the chip test steps/files & results produced  and how much should be done by hands / how much could be fully automated :
+In short a chip test will be ( Claire will probably correct some points , but at this stage this is to give you an idea )  :
+
+   -  Take the chip from the untested  chip box  and put it in the socket (don’t close it ) 
+
+   -  identify the chip ID (number visible on top of the chip ) / fill the chip ID in labeview ( & e-traveler ? ) 
+
+   -  re-check the chip ID  from what labeview show on screen and what you see in the socket . Close the socket
+
+   -  start the automated test  of chip n : will run for 10-15 minutes …as this test runs the operator may have time to finalize the archiving and indexing of the chip n-1 test results 
+
+   -  test results will be in the form of files : 
+          - raw data file & results file  :   all the data associated to a given chip are written in an unique  directory with a name based on the chip ID .
+
+   -  Key numbers associated to each chip could be archived in a LSST db :  there is a few  100 key numbers for each chips   ( 8x8 xtalk matrix , noise and gain in # configuration for each of the 8 
+       channels , a few linearity curves)   : this is an issue the characteristic of each chip is not 1 or 10 numbers … its much more . So no way to copy this by hand , should be filled automatically. 
+
+So the question is what should we do from e-traveler point of view of the produced files ? To index them will be good …but indeed to read automatically the « results files  «  and fill 
+a DB could be nice . 
+     
+   -  data transfer to archive  (we have a directory tree for this at ccin2p3 ) : how this is triggered may evolve  . It is not excluded that we run extra process under linux there ( all the results quoted
+      above are produced from window under labview ) , to further analyse the file … but I think that Claire try to get right now all the key results out of a on the fly  labview analysis .  
+      At this stage we may forget the linux processing , as this may evolve between now and the production … 
+  
+  - The idea is that as soon the test is over , if labeview is not flashing red and say that the chip can be withdrawn , we can withdraw the chip from the socket ,  put it in the " tested box «   
+     and move to the test of the chip n+1 …  and as I said , as the test of the chip n+1  runs , the operator could finalize the  writing associated to the chip n  / look in detail the results its characterization .
+     We will probably not declare at this stage a chip okay :  we may review all the chips results , and then identify / validate the good one . But at least the operator could validate that the 
+      characterization of the chip n run correctly . 
+
+
+  
+
+> I¹m presuming you don¹t have firewall issues, but you can get here from
+> your lab?
+>
+> http://lsst-camera.slac.stanford.edu/LSSTDemo/
+>
+
+No problem I could log :-) 
+( done from home … ) 
+
+
+Cheers, 
+
+Pierre

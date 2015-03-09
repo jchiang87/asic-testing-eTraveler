@@ -1,0 +1,54 @@
+%YAML 1.1
+---
+# Prototype chip testing sequence at Paris.  This procedure pertains to
+# both types of ASICs, ASPIC and CABAC.
+# 
+Name: ASIC_testing
+HardwareType: ASIC
+Description: Chip testing procedure at Paris
+Sequence:
+  -
+   Name: Check power supply
+   Description: Ensure the power supply is turned off.
+  -
+   Name: Place chip in socket
+   Description: Take the chip from the untested box and put it in the 
+               socket, but do not close the socket.
+  -
+   Name: Verify the chip ID
+   Description: Ensure that the chip ID matches the eTraveler field
+               and enter the chip ID into LabView.
+  -
+   Name: Close the socket
+   Description: Close the socket cover.
+  -
+   Name: Start automated tests
+   Description: Start the LabView test script, which will run for
+               10-15 minutes.  These tests may fail, in which case,
+               LabView will flash a red failure message.
+   Selection:
+    -
+     Condition: PASS
+     Name: LabView finishes successfully
+     Sequence:
+      -
+       Name: Save_ASIC_test_results
+       Description: LabView tests have finished to completion.  Execute
+                   the Job Harness script that persists the output files
+                   from the LabView tests.
+      -
+       Name: Put chip in tested box
+       Description: Ensure LabView says the chip can be withdrawn. Remove
+                   the chip and place it in the tested box.  Turn off
+                   power-supply for next chip (should this be done before
+                   removing the chip?).
+    -
+     Condition: FAIL
+     Name: LabView tests do not finish successfully
+     Sequence:
+      -
+       Name: Put chip in failed box
+       Description: Ensure LabView says the chip can be withdrawn. Remove
+                   the chip and place it in the failed box.  Turn off
+                   power-supply for next chip (should this be done before
+                   removing the chip?).
